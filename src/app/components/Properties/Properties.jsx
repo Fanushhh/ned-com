@@ -1,10 +1,11 @@
 import Image from "next/image";
 import styles from "./Properties.module.css";
 const fetchProperties = async () => {
-  const data = await fetch("http://localhost:3000/api/properties", {
+  const response = await fetch("http://localhost:3000/api/properties", {
     method: "GET",
   });
-  return data.json();
+  const data = await response.json();
+  return data;
 };
 
 export default async function Properties() {
