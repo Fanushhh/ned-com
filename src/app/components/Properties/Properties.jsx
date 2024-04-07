@@ -3,8 +3,8 @@ import styles from "./Properties.module.css";
 import { getProperties } from "@/app/lib/properties";
 
 const fetchProperties = async () => {
-  const response = getProperties();
-  return response;
+  const response = await getProperties();
+  return response.json();
 };
 
 export default async function Properties() {
