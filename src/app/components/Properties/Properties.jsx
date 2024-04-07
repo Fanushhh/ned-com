@@ -1,11 +1,10 @@
 import Image from "next/image";
 import styles from "./Properties.module.css";
+import { getProperties } from "@/app/lib/properties";
+
 const fetchProperties = async () => {
-  const response = await fetch(process.env.API_BASE_URL, {
-    method: "GET",
-  });
-  const data = await response.json();
-  return data;
+  const response = getProperties();
+  return response;
 };
 
 export default async function Properties() {
