@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./Properties.module.css";
 const fetchProperties = async () => {
-  const response = await fetch("/api/properties", {
+  const response = await fetch(process.env.API_BASE_URL, {
     method: "GET",
   });
   const data = await response.json();
