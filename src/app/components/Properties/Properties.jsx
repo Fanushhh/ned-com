@@ -2,13 +2,10 @@ import Image from "next/image";
 import styles from "./Properties.module.css";
 import { getProperties } from "@/app/lib/properties";
 
-const fetchProperties = async () => {
-  const response = await getProperties();
-  return response.json();
-};
+
 
 export default async function Properties() {
-  const data = await fetchProperties();
+  const data = await getProperties();
   if (!data) return <p>No data found.</p>;
   return (
     <section id="properties" className={styles.propertiesWrapper}>
