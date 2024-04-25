@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
-
+import NavBar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import { FilterProvider } from "./providers/FilterProvider/FilterProvider";
 export const metadata = {
   title: "Ned Com",
   description: "Ned Com Imobiliare - Agentie imobiliara",
@@ -11,7 +11,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+    <FilterProvider >
+      <body>
+      <NavBar />
+      {children}
+      <Footer />
+      </body>
+      </FilterProvider>
     </html>
+    
   );
 }

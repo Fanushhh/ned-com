@@ -6,8 +6,10 @@ const nextConfig = {
       { hostname: "thumb.rebs-site-builder.com" },
       { hostname: "dcwebdesign.ro" },
       { hostname: "www.familytravel.ro" },
+      { hostname: "thumb.crmrebs.com"},
     ],
   },
+  
 };
 
 export default nextConfig;

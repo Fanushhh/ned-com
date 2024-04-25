@@ -1,0 +1,48 @@
+.propertyFilterWrapper{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:16px;
+    margin-bottom:25px;
+    
+}
+.propertyFilterWrapper{
+    gap:40px;
+    
+}
+.propertyFilter{
+    padding:16px;
+}
+.filterWrapper{
+    border: 1px solid #E5E5E5;
+    padding: 1rem 2rem;
+    width:450px;
+    max-width: 100%;
+    .filterTitle{
+        margin-bottom:1rem;
+    }
+}
+.filterContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+.filterSelect{
+    padding:.5rem 1rem;
+    color: #333;
+    width: 100%;
+}
+.inputContainer,.textInput{
+    width: 100%;
+}
+.textInput{
+    padding:.5rem 1rem;
+}
+
+@media (max-width:900px){
+    .filterWrapper{
+        display:none;
+    }
+}

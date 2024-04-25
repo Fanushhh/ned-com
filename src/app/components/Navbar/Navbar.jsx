@@ -19,7 +19,7 @@ export default function NavBar(){
             </button>
             
                 <ul  className={isOpen ? styles.open : styles.closed}>
-                    <li><Link href="/proprietati">Proprietati</Link></li>
+                    <li><Link href="pages/proprietati">Proprietati</Link></li>
                     <li><Link href="/vinde-cu-noi">Vinde cu noi</Link></li>
                     <li><Link href="/contact">Contact</Link></li>
                 </ul>

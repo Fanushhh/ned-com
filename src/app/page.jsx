@@ -1,25 +1,29 @@
 
 import styles from "./page.module.css";
-import NavBar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Properties from "./components/Properties/Properties";
 import Cta from "./components/Cta/Cta";
 import Contact from "./components/Contact/Contact";
 import Socials from "./components/Socials/Socials";
-import Footer from "./components/Footer/Footer";
+import { getProperties } from "./lib/properties";
+import { FilterProvider } from "./providers/FilterProvider/FilterProvider";
 
-export default function Home() {
+export default async function Home() {
+  const properties = await getProperties(3);
+  
   return (
     <>
+    
     <main className={styles.heroSection}>
-      <NavBar />
+      
       <Hero />
-      <Properties />
+      <Properties properties={properties} isHero={true}/>
       <Cta />
       <Contact />
       <Socials/> 
     </main>
-    <Footer />
+  
+    
     </>
   );
 }
