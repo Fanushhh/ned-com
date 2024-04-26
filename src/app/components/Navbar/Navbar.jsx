@@ -3,10 +3,15 @@ import React from "react";
 import Link from "next/link"
 import styles from './Navbar.module.css';
 import Image from "next/image";
-
+import { usePathname } from 'next/navigation'
 
 export default function NavBar(){
     const [isOpen, setIsOpen] = React.useState(false);
+    const pathname = usePathname();
+    
+    function handleClick(){
+        setIsOpen(false);
+    }
     return (
         <header className={styles.navWrapper}>
             <nav className={styles.navbar}>
@@ -19,9 +24,9 @@ export default function NavBar(){
             </button>
             
                 <ul  className={isOpen ? styles.open : styles.closed}>
-                    <li><Link href="pages/proprietati">Proprietati</Link></li>
-                    <li><Link href="/vinde-cu-noi">Vinde cu noi</Link></li>
-                    <li><Link href="/contact">Contact</Link></li>
+                    <li><Link onClick={handleClick} href={pathname.includes('pages') ? 'proprietati' : 'pages/proprietati'}>Proprietati</Link></li>
+                    <li><Link onClick={handleClick} href="/vinde-cu-noi">Vinde cu noi</Link></li>
+                    <li><Link onClick={handleClick} href="/contact">Contact</Link></li>
                 </ul>
             </nav>
         </header>

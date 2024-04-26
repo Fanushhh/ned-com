@@ -3,6 +3,7 @@ import styles from "./proprietati.module.css";
 import { getProperties } from "@/app/lib/properties";
 import Properties from "@/app/components/Properties/Properties";
 import { Filter } from "@/app/components/Filter/Filter";
+import { Sort } from "@/app/components/Sort/Sort";
 
 export default async function PropertiesPage() {
   const properties = await getProperties();
@@ -14,16 +15,7 @@ export default async function PropertiesPage() {
         <h1 className={styles.propertiesTitle}>
           Oferte imobiliare Ned Com Imobiliare
         </h1>
-        <div className={styles.propertyFilterWrapper}>
-          <p>{properties.length} rezultate</p>
-          <select className={styles.propertyFilter}>
-            <option value="actualizate-recent">Actualizate recent</option>
-            <option value="actualizate-recent">Pret crescator</option>
-            <option value="actualizate-recent">Pret descrescator</option>
-            <option value="actualizate-recent">Suprafata crescator</option>
-            <option value="actualizate-recent">Suprafata descrescator</option>
-          </select>
-        </div>
+        <Sort length={properties.length} />
       </div>
       <section className={styles.propertiesContainer}>
         <Properties properties={properties} isHero={false} />

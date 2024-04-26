@@ -1,0 +1,39 @@
+.propertySortWrapper{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:16px;
+    margin-bottom:25px;
+}
+
+.propertySortWrapper{
+    gap:40px;
+}
+.propertySort{
+    padding:16px;
+}
+
+.showFilters{
+    display:none;
+}
+@media (max-width:950px){
+    .showFilters{
+        display:block;
+        color:black;
+        border:1px solid black;
+        padding:1rem;
+        cursor:pointer;
+        width: 100%;
+        
+    }
+    .showFilters:hover{
+        background-color:black;
+        color:white;
+
+    }
+    .propertySortWrapper{
+        flex-direction: column;
+        gap:1rem;
+        
+    }
+}
