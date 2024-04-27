@@ -4,19 +4,17 @@ import styles from "./Sort.module.css";
 import { FilterContext } from "../../providers/FilterProvider/FilterProvider";
 import { useContext } from "react";
 
-export const Sort = ({length}) => {
-    const {setSortBy, isVisible, setIsVisible} = useContext(FilterContext);
-    
-
+export const Sort = () => {
+    const {setSortBy, isVisible, setIsVisible, propertyCount} = useContext(FilterContext);
     const handleChange = (e) => {
         setSortBy(e.target.value);
     }
-    console.log(isVisible);
+   
     
 
     return(
         <div className={styles.propertySortWrapper}>
-          <p>{length} rezultate</p>
+          <p>{propertyCount} {propertyCount > 1 || propertyCount === 0 ? 'rezultate': 'rezultat'}</p>
           <button onClick={() => setIsVisible(!isVisible)} className={styles.showFilters}>Filtreaza</button>
           <select onChange={handleChange} className={styles.propertySort}>
             <option value="actualizate-recent">Actualizate recent</option>

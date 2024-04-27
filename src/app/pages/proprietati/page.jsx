@@ -15,7 +15,7 @@ export default async function PropertiesPage() {
         <h1 className={styles.propertiesTitle}>
           Oferte imobiliare Ned Com Imobiliare
         </h1>
-        <Sort length={properties.length} />
+        <Sort />
       </div>
       <section className={styles.propertiesContainer}>
         <Properties properties={properties} isHero={false} />

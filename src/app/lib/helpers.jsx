@@ -54,5 +54,5 @@ export const filterProperties = (properties, filter) => {
             return false;
         }
         return true;
-      })
+      });
 }

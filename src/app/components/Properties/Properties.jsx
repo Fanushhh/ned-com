@@ -3,24 +3,41 @@ import Image from "next/image";
 import styles from "./Properties.module.css";
 import React from "react";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FilterContext } from "@/app/providers/FilterProvider/FilterProvider";
 import { sortFunction, filterProperties } from "@/app/lib/helpers";
 export default function Properties({ properties, isHero }) {
-  const { filter, isFiltered, sortBy } = useContext(FilterContext);
-  
-  if (!properties) {
-    return <p>No properties found.</p>;
-  }
 
+  
+  const { filter, isFiltered, sortBy, setPropertyCount } = useContext(FilterContext);
+  
+  
+  
   const filteredProperties = filterProperties(properties, filter);
-  console.log(filteredProperties)
-  if (filteredProperties.length === 0) {
-    return <p>No properties found.</p>;
-  }
+  
+  
   let newProperties = isFiltered ? filteredProperties : properties;
+  
+  
   if(sortBy.length > 0){
     newProperties = sortFunction(newProperties, sortBy);
+  }
+  useEffect(() => {
+    if(isFiltered){
+      setPropertyCount(filteredProperties.length);
+      console.log(properties.length)
+    }else{
+      setPropertyCount(properties.length);
+    }
+    
+  
+  },[filteredProperties, properties])
+  if (filteredProperties.length === 0) {
+    
+    return <p>No properties found.</p>;
+  }
+  if (!properties) {
+    return <p>No properties found.</p>;
   }
 
   if (isHero) {
@@ -57,7 +74,6 @@ export default function Properties({ properties, isHero }) {
     return (
       <div className={styles.propertiesList}>
         {newProperties.map((property) => {
-          
           return (
             <div key={property.id} className={styles.propertyWrapper}>
               <Link

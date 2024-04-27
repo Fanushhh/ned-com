@@ -3,16 +3,18 @@
 import { FilterContext } from "@/app/providers/FilterProvider/FilterProvider";
 import { useContext, useState } from "react";
 import styles from "./Filter.module.css";
-
+let rooms = ["1", "2", "3", "4+"];
 export const Filter = () => {
-  const { filter,setFilter, setIsFiltered, isVisible, setIsVisible } = useContext(FilterContext);
+  const { filter, setFilter, setIsFiltered, isVisible, setIsVisible } =
+  useContext(FilterContext);
   const [isRoomSelected, setIsRoomSelected] = useState(null);
-  console.log(isRoomSelected);
-  if(typeof window !== "undefined"){
-      const body = document.querySelector("body");
-      body.style.overflow = isVisible ? "hidden" : "auto";
+  
+  if (typeof window !== "undefined") {
+    const body = document.querySelector("body");
+    body.style.overflow = isVisible ? "hidden" : "auto";
   }
-  let rooms = ["1", "2", "3", "4+"];
+  
+
   function handleChange(e) {
     const { name, value } = e.target;
     setFilter((prev) => ({ ...prev, [name]: value }));
@@ -21,7 +23,7 @@ export const Filter = () => {
   }
   const handleClick = (e) => {
     setIsVisible(false);
-  }
+  };
   const resetFilters = () => {
     setFilter({
       propertyType: "",
@@ -29,10 +31,11 @@ export const Filter = () => {
       zone: "",
       minPrice: "",
       maxPrice: "",
-      nrOfRooms: ""
+      nrOfRooms: "",
     });
-    setIsFiltered(false); 
-  }
+    setIsFiltered(false);
+    setIsRoomSelected(null);
+  };
 
   return (
     <div
@@ -87,52 +90,73 @@ export const Filter = () => {
             type="text"
             id="zone"
             placeholder="Zona"
-            
           />
         </div>
         <div className={styles.priceRange}>
           <div className={styles.priceContainer}>
-              <label className={styles.priceLabel} htmlFor="minPrice">Min</label>
-              <input
-                onChange={handleChange}
-                value={filter.minPrice}
-                name="minPrice"
-                className={styles.textInput}
-                type="number"
-                id="minPrice"
-                placeholder="Pret minim"
-              />
+            <label className={styles.priceLabel} htmlFor="minPrice">
+              Min
+            </label>
+            <input
+              onChange={handleChange}
+              value={filter.minPrice}
+              name="minPrice"
+              className={styles.textInput}
+              type="number"
+              id="minPrice"
+              placeholder="Pret minim"
+            />
           </div>
           <div className={styles.priceContainer}>
-              <label className={styles.priceLabel} htmlFor="maxPrice">Max</label>
-              <input
-                onChange={handleChange}
-                value={filter.maxPrice}
-                name="maxPrice"
-                className={styles.textInput}
-                type="number"
-                id="maxPrice"
-                placeholder="Pret maxim"
-              />
+            <label className={styles.priceLabel} htmlFor="maxPrice">
+              Max
+            </label>
+            <input
+              onChange={handleChange}
+              value={filter.maxPrice}
+              name="maxPrice"
+              className={styles.textInput}
+              type="number"
+              id="maxPrice"
+              placeholder="Pret maxim"
+            />
           </div>
         </div>
         <div>
-            <p>Numar de camere</p>
+          <p>Numar de camere</p>
         </div>
         <div className={styles.roomContainer}>
-            {rooms.map(room => {
-                
-                return (
-                    <div key={room} className={`${styles.radioContainer} ${isRoomSelected == room ? styles.checked : ''}`}>
-                        <label className={styles.roomLabel} htmlFor={`room${room}`}>{room}</label>
-                        <input onChange={handleChange} className={styles.roomInput} type="radio" name="nrOfRooms" id={`room${room}`} value={room}/>
-                    </div>
-                )
-            })}
+          {rooms.map((room) => {
+            return (
+              <div
+                key={room}
+                className={`${styles.radioContainer} ${
+                  isRoomSelected == room ? styles.checked : ""
+                }`}
+              >
+                <label className={styles.roomLabel} htmlFor={`room${room}`}>
+                  {room}
+                </label>
+                <input
+                  onChange={handleChange}
+                  className={styles.roomInput}
+                  type="radio"
+                  name="nrOfRooms"
+                  id={`room${room}`}
+                  value={room}
+                  checked={isRoomSelected == room}
+                />
+              </div>
+            );
+          })}
         </div>
         <div className={styles.filterButtons}>
-          <button className={styles.applyFilterBtn} onClick={handleClick}>Aplica filtre</button>
-          <button onClick={resetFilters} className={styles.applyFilterBtn}>Sterge filtre</button>
+          <button className={styles.applyFilterBtn} onClick={handleClick}>
+            Aplica filtre
+          </button>
+          <button onClick={resetFilters} className={styles.applyFilterBtn}>
+            Sterge filtre
+          </button>
         </div>
       </div>
     </div>
