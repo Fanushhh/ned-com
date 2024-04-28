@@ -6,8 +6,13 @@ import Link from "next/link";
 import { useContext, useEffect } from "react";
 import { FilterContext } from "@/app/providers/FilterProvider/FilterProvider";
 import { sortFunction, filterProperties } from "@/app/lib/helpers";
-export default function Properties({ properties, isHero }) {
+import {Swiper as SwiperComponent, SwiperSlide} from "swiper/react";
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
+export default function Properties({ properties, isHero }) {
   
   const { filter, isFiltered, sortBy, setPropertyCount } = useContext(FilterContext);
   
@@ -45,7 +50,7 @@ export default function Properties({ properties, isHero }) {
       <section id="properties" className={styles.propertiesWrapper}>
         {properties.map((property) => {
           return (
-            <Link href={`/proprietati/${property.id}`} key={property.id}>
+            <Link href={`pages/proprietati/${property.id}`} key={property.id}>
               <div key={property.id} className={styles.propertyCard}>
                 <Image
                   style={{ objectFit: "cover" }}
@@ -73,22 +78,36 @@ export default function Properties({ properties, isHero }) {
   } else {
     return (
       <div className={styles.propertiesList}>
+      
         {newProperties.map((property) => {
           return (
             <div key={property.id} className={styles.propertyWrapper}>
               <Link
-                href={`/proprietati/${property.id}`}
+                href={`proprietati/${property.id}`}
                 key={property.id}
                 className={styles.imageLink}
               >
+              <SwiperComponent
+              navigation={true}
+              pagination={{type:'fraction'}}
+              modules={[Navigation, Pagination]}
+              >
+              {property.resized_images.map((image, index) => {
+                return <SwiperSlide key={index}>
                 <Image
                   style={{ objectFit: "cover" }}
-                  src={property.resized_images[0]}
+                  src={image}
                   alt={property.title}
                   width={316}
                   height={200}
                   className={styles.propertyImage}
                 />
+
+                </SwiperSlide>
+
+              })}
+                
+                </SwiperComponent>
               </Link>
               <div className={styles.propertyDesc}>
                 <h2 className={styles.propertyTitle}>{property.title}</h2>
@@ -102,7 +121,7 @@ export default function Properties({ properties, isHero }) {
                   mp
                 </p>
                 <Link
-                  href={`/proprietati/${property.id}`}
+                  href={`proprietati/${property.id}`}
                   className={styles.propertyCTA}
                 >
                   Vezi proprietate

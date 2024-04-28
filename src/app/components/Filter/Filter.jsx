@@ -150,6 +150,9 @@ export const Filter = () => {
             );
           })}
         </div>
+        <div>
+          
+        </div>
         <div className={styles.filterButtons}>
           <button className={styles.applyFilterBtn} onClick={handleClick}>
             Aplica filtre

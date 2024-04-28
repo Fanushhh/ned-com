@@ -7,6 +7,7 @@ const nextConfig = {
       { hostname: "dcwebdesign.ro" },
       { hostname: "www.familytravel.ro" },
       { hostname: "thumb.crmrebs.com"},
+      {hostname: "media.crmrebs.com"},
     ],
   },
   

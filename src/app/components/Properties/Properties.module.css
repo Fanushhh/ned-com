@@ -8,6 +8,15 @@
     padding:0 16px;
 }
 
+.propertyTitle{
+    font-size:1rem;
+}
+.price{
+    color:rgba(0,150,50)
+}
+.description{
+    font-size:0.8rem;
+}
 .propertyCard{
     width: 300px;
     max-width: 100%;
@@ -15,15 +24,7 @@
     flex-direction: column;
     gap:8px;
     
-    .propertyTitle{
-        font-size:1rem;
-    }
-    .price{
-        color:rgba(0,150,50)
-    }
-    .description{
-        font-size:0.8rem;
-    }
+    
 }
 .propertiesList{
     display:grid;

@@ -1,0 +1,31 @@
+.propertyPage{
+    padding:16px;
+    width: 1300px;
+    max-width: 100%;
+    margin:100px auto;
+    .pageHeader, .propertyDetails{
+        display:flex;
+        justify-content: space-between;
+    }
+    .propertyDetails div{
+        display:flex;
+        gap:16px;
+        
+    }
+    .price{
+        color:rgba(0,150,50);
+    }
+    
+}
+
+@media (max-width:950px){
+    .pageHeader, .propertyDetails{
+        flex-direction: column;
+        gap:1rem;
+        text-align: center;
+    }
+    .propertyDetails div{
+        justify-content: center;
+        gap:1rem;
+    }
+}

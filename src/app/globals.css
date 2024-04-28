@@ -15,11 +15,28 @@
 * {
   margin: 0;
 }
+:root{
+  --swiper-pagination-color: #fff;
+}
 /*
   Typographic tweaks!
   3. Add accessible line-height
   4. Improve text rendering
 */
+.swiper-button-prev, .swiper-button-next{
+  color:#fff!important;
+  background-color: rgba(0,0,0,0.3);
+  
+}
+.swiper-button-prev:after, .swiper-button-next:after{
+  font-size:18px!important;
+}
+.swiper-pagination-fraction{
+  color:black!important;
+  background-color:white;
+  margin-left:10px;
+  width: 50px!important;
+}
 svg{
   height: 100%;
 }
