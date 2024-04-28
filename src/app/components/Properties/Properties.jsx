@@ -6,44 +6,35 @@ import Link from "next/link";
 import { useContext, useEffect } from "react";
 import { FilterContext } from "@/app/providers/FilterProvider/FilterProvider";
 import { sortFunction, filterProperties } from "@/app/lib/helpers";
-import {Swiper as SwiperComponent, SwiperSlide} from "swiper/react";
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Swiper as SwiperComponent, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function Properties({ properties, isHero }) {
-  
-  const { filter, isFiltered, sortBy, setPropertyCount } = useContext(FilterContext);
-  
-  
-  
+  const { filter, isFiltered, sortBy, setPropertyCount } =
+    useContext(FilterContext);
+
   const filteredProperties = filterProperties(properties, filter);
-  
-  
+
   let newProperties = isFiltered ? filteredProperties : properties;
-  
-  
-  if(sortBy.length > 0){
+
+  if (sortBy.length > 0) {
     newProperties = sortFunction(newProperties, sortBy);
   }
   useEffect(() => {
-    if(isFiltered){
+    if (isFiltered) {
       setPropertyCount(filteredProperties.length);
-      console.log(properties.length)
-    }else{
+    } else {
       setPropertyCount(properties.length);
     }
-    
+  }, [filteredProperties, properties]);
   
-  },[filteredProperties, properties])
-  if (filteredProperties.length === 0) {
-    
+  if (filteredProperties.length === 0 || !properties) {
     return <p>No properties found.</p>;
   }
-  if (!properties) {
-    return <p>No properties found.</p>;
-  }
+ 
 
   if (isHero) {
     return (
@@ -78,7 +69,6 @@ export default function Properties({ properties, isHero }) {
   } else {
     return (
       <div className={styles.propertiesList}>
-      
         {newProperties.map((property) => {
           return (
             <div key={property.id} className={styles.propertyWrapper}>
@@ -87,26 +77,30 @@ export default function Properties({ properties, isHero }) {
                 key={property.id}
                 className={styles.imageLink}
               >
-              <SwiperComponent
-              navigation={true}
-              pagination={{type:'fraction'}}
-              modules={[Navigation, Pagination]}
-              >
-              {property.resized_images.map((image, index) => {
-                return <SwiperSlide key={index}>
-                <Image
-                  style={{ objectFit: "cover" }}
-                  src={image}
-                  alt={property.title}
-                  width={316}
-                  height={200}
-                  className={styles.propertyImage}
-                />
-
-                </SwiperSlide>
-
-              })}
-                
+                <SwiperComponent
+                  navigation={true}
+                  pagination={{ type: "fraction" }}
+                  modules={[Navigation, Pagination]}
+                  loop={property.resized_images.length > 1}
+                >
+                  {property.resized_images.map((image, index) => {
+                    while(index < 10){
+                      return (
+                      <SwiperSlide key={index}>
+                        <Image
+                          style={{ objectFit: "cover" }}
+                          src={image}
+                          alt={property.title}
+                          width={316}
+                          height={200}
+                          className={styles.propertyImage}
+                          
+                        />
+                      </SwiperSlide>
+                    );
+                    }
+                    
+                  })}
                 </SwiperComponent>
               </Link>
               <div className={styles.propertyDesc}>

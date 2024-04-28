@@ -4,7 +4,7 @@
     left:0;
     width:100%;
     height:100%;
-    background-color:rgba(0,0,0,0.5);
+    background-color:rgb(255,255,255);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -14,6 +14,9 @@
         width: 1200px;
         max-width: 100%;
     }
+    .modalImage{
+        object-fit: contain;
+    }
 }
 .modalCloseButton{
     position: absolute;
@@ -21,8 +24,13 @@
     right: 20px;
     background-color: transparent;
     border: none;
-    color: white;
-    font-size: 24px;
+    color: black;
+    font-size: 20px;
     cursor: pointer;
     z-index: 1002;
+}
+@media (max-width:600px){
+    .modalImage{
+        height: 300px;
+    }
 }

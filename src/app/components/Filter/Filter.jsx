@@ -5,13 +5,14 @@ import { useContext, useState } from "react";
 import styles from "./Filter.module.css";
 let rooms = ["1", "2", "3", "4+"];
 export const Filter = () => {
-  const { filter, setFilter, setIsFiltered, isVisible, setIsVisible } =
+  const { filter, setFilter, setIsFiltered, isFilterVisible, setIsFilterVisible } =
   useContext(FilterContext);
   const [isRoomSelected, setIsRoomSelected] = useState(null);
   
   if (typeof window !== "undefined") {
     const body = document.querySelector("body");
-    body.style.overflow = isVisible ? "hidden" : "auto";
+    
+    body.style.overflowY = isFilterVisible === 'visible' ? "hidden" : "auto";
   }
   
 
@@ -22,7 +23,7 @@ export const Filter = () => {
     setIsRoomSelected(e.target.value);
   }
   const handleClick = (e) => {
-    setIsVisible(false);
+    setIsFilterVisible('hidden');
   };
   const resetFilters = () => {
     setFilter({
@@ -40,13 +41,13 @@ export const Filter = () => {
   return (
     <div
       className={`${styles.filterWrapper} ${
-        isVisible ? styles.visibleFilter : ""
+        isFilterVisible === 'visible' ? styles.visibleFilter : ""
       }`}
     >
       <div className={styles.titleContainer}>
         <h2 className={styles.filterTitle}>Filtrare properietati</h2>
         <button
-          onClick={() => setIsVisible(!isVisible)}
+          onClick={() => setIsFilterVisible('hidden')}
           className={styles.closeButton}
         >
           Inchide

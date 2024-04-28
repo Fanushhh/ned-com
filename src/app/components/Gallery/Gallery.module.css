@@ -1,11 +1,11 @@
 .galleryWrapper{
     margin-top: 50px;
-    max-width: 938px;
+    max-width: 600px;
     width: 100%;
     
 }
 .galleryWrapper img{
-    object-fit: cover;
+    object-fit: contain;
     margin:0 auto;
     
 }

@@ -6,7 +6,7 @@ export const FilterContext = createContext(null);
 export const FilterProvider = ({ children }) => {
   const [isFiltered, setIsFiltered] = useState(false);
   const [sortBy, setSortBy] = useState("actualizate-recent");
-  const [isVisible, setIsVisible] = useState(false);
+  const [isFilterVisible, setIsFilterVisible] = useState('hidden');
   const [propertyCount, setPropertyCount] = useState(0);
   const [filter, setFilter] = useState({
     propertyType: "",
@@ -29,8 +29,8 @@ export const FilterProvider = ({ children }) => {
         setIsFiltered,
         setSortBy,
         sortBy,
-        isVisible,
-        setIsVisible,
+        isFilterVisible,
+        setIsFilterVisible,
         setPropertyCount,
         propertyCount,
       }}

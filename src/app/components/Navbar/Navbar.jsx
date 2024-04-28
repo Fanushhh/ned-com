@@ -24,7 +24,7 @@ export default function NavBar(){
             </button>
             
                 <ul  className={isOpen ? styles.open : styles.closed}>
-                    <li><Link onClick={handleClick} href={pathname.includes('pages') ? 'proprietati' : 'pages/proprietati'}>Proprietati</Link></li>
+                    <li><Link onClick={handleClick} href={'/pages/proprietati'}>Proprietati</Link></li>
                     <li><Link onClick={handleClick} href={pathname.includes('pages') ? 'vinde-cu-noi' : 'pages/vinde-cu-noi'}>Vinde cu noi</Link></li>
                     <li><Link onClick={handleClick} href="/contact">Contact</Link></li>
                 </ul>

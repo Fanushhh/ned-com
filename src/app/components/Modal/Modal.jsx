@@ -45,6 +45,7 @@ export const Modal = ({ images, setIsModalOpen, currentImage, setCurrentImage })
           initialSlide={currentImage}
           onSlideChange={(e) => setCurrentImage(e.activeIndex)}
           update
+          
         >
           {images.map((image, index) => (
             <SwiperSlide key={index}>

@@ -123,7 +123,7 @@
     
     
     .filterWrapper{
-        transition: right 250ms ease-in;
+        /* transition: right 250ms ease-in; */
         position:absolute;
         right:-100%;
         background-color: white;

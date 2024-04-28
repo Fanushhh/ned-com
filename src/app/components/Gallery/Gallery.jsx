@@ -33,7 +33,7 @@ export default function Gallery({images}){
                 navigation
                 onSlideChange={(e) => setCurrentImage(e.activeIndex)}
                 ref={swiperRef}
-                
+                loop={true}
             >
                 {images.map((image, index) => (
                     <SwiperSlide onClick={() => setIsModalOpen(true)} key={index}>

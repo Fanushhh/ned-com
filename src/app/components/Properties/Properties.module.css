@@ -1,79 +1,101 @@
-.propertiesWrapper{
-    display:flex;
-    justify-content: space-between;
-    margin:100px auto;
+.propertiesWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
     max-width: 1100px;
-    gap:2rem;
+    gap: 2rem;
     container-type: inline-size;
-    padding:0 16px;
+    padding: 0 16px;
 }
 
-.propertyTitle{
-    font-size:1rem;
+.propertyTitle {
+    font-size: 1rem;
 }
-.price{
-    color:rgba(0,150,50)
+
+.price {
+    color: rgba(0, 150, 50)
 }
-.description{
-    font-size:0.8rem;
+
+.description {
+    font-size: 0.8rem;
 }
-.propertyCard{
+
+.propertyCard {
     width: 300px;
     max-width: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    gap:8px;
-    
-    
+    gap: 8px;
+
+
 }
-.propertiesList{
-    display:grid;
+
+.propertiesList {
+    display: grid;
     grid-template-columns: 1fr;
-    gap:30px;
+    gap: 30px;
     width: 1000px;
     max-width: 100%;
-    padding:16px;
+    padding: 16px;
 }
-.propertyWrapper{
-    display:flex;
+
+.propertyWrapper {
+    display: flex;
     align-items: center;
-    gap:30px;
-    .imageLink{
+    gap: 30px;
+
+    .imageLink {
         max-width: 316px;
         width: 100%;
-        display:block;
+        display: block;
     }
-    .propertyImage{
+
+    .propertyImage {
         width: 100%;
         max-width: 316px;
     }
-    .propertyDesc{
-        display:flex;
+
+    .propertyDesc {
+        display: flex;
         flex-direction: column;
-        gap:8px;
+        gap: 8px;
     }
-    .propertyTitle{
-        font-size:18px;
+
+    .propertyTitle {
+        font-size: 18px;
     }
-    .propertyCTA{
-        background-color:#2ABB67;
-        color:white;
+
+    .propertyCTA {
+        background-color: #2ABB67;
+        color: white;
         width: 200px;
-        padding:10px 20px;
-        
+        padding: 10px 20px;
+
     }
 }
 
-@media (max-width:850px){
-    .propertiesList{
+@media (max-width:1100px) {
+    .propertiesWrapper {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:850px) {
+    .propertiesList {
         place-items: center;
     }
-    .propertiesWrapper, .propertyWrapper{
+
+    .propertiesWrapper {
+        grid-template-columns:
+    }
+
+    .propertyWrapper {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
     }
-    .propertyWrapper{
+
+    .propertyWrapper {
         width: 100%;
         max-width: 316px;
     }
