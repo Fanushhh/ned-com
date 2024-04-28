@@ -37,7 +37,7 @@ export default function Gallery({images}){
             >
                 {images.map((image, index) => (
                     <SwiperSlide onClick={() => setIsModalOpen(true)} key={index}>
-                        <Image className={styles} src={image} alt={`gallery-image-${index}`} width={938} height={527}/>
+                        <Image className={styles.galleryImage} src={image} alt={`gallery-image-${index}`} width={938} height={527}/>
                         
                     </SwiperSlide>
                     

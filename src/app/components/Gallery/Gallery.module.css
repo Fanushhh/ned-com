@@ -8,4 +8,11 @@
     object-fit: contain;
     margin:0 auto;
     
+    
+}
+
+@media (max-width: 768px){
+    .galleryWrapper img{
+        height:300px;
+    }
 }
