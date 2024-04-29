@@ -45,6 +45,7 @@ export const Modal = ({ images, setIsModalOpen, currentImage, setCurrentImage })
           initialSlide={currentImage}
           onSlideChange={(e) => setCurrentImage(e.activeIndex)}
           update
+          loop={true}
           
         >
           {images.map((image, index) => (

@@ -122,16 +122,17 @@
 
 @media (max-width:950px){
     
-    
     .filterWrapper{
-        transition: transform 1s ease-in-out;
-        position:absolute;
+        transition: transform 250ms ease-in-out;
+        position:fixed;
         transform:translateX(100%);
         z-index: 1001;
-        top:0%;
+        top:0;
+        right:0;
         width: 100%;
+        max-width: 400px;
         height: 100vh;
-         display:flex;
+        display:flex;
         flex-direction: column;
         justify-content: center;
         .closeButton{

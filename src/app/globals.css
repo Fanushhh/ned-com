@@ -42,7 +42,7 @@ svg{
 }
 html{
   overflow-x:hidden;
-  
+
 }
 body {
   line-height: 1.5;
@@ -51,6 +51,7 @@ body {
   scroll-behavior: smooth!important;
   position: relative;
   overflow-x: hidden;
+  min-height: 100vh;
   
 }
 

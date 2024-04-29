@@ -16,6 +16,7 @@
     }
     .modalImage{
         object-fit: contain;
+        
     }
 }
 .modalCloseButton{
@@ -32,5 +33,7 @@
 @media (max-width:600px){
     .modalImage{
         height: 300px;
+        min-height: auto;
+        width: auto;
     }
 }

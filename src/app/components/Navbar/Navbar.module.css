@@ -52,7 +52,7 @@
     }
     .navbar ul{
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         align-items: center;
         justify-content: center;
         padding:32px;

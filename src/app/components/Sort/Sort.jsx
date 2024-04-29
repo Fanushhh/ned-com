@@ -9,13 +9,16 @@ export const Sort = () => {
     const handleChange = (e) => {
         setSortBy(e.target.value);
     }
+    const handleFilter = () =>{
+        setIsFilterVisible('visible');
+    }
    
     
 
     return(
         <div className={styles.propertySortWrapper}>
           <p>{propertyCount} {propertyCount > 1 || propertyCount === 0 ? 'rezultate': 'rezultat'}</p>
-          <button onClick={() => setIsFilterVisible('visible')} className={styles.showFilters}>Filtreaza</button>
+          <button onClick={handleFilter} className={styles.showFilters}>Filtreaza</button>
           <select onChange={handleChange} className={styles.propertySort}>
             <option value="actualizate-recent">Actualizate recent</option>
             <option value="Pret crescator">Pret crescator</option>

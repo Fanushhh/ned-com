@@ -21,7 +21,7 @@ export const Filter = () => {
     setIsFiltered(true);
     setIsRoomSelected(e.target.value);
   }
-  const handleClick = (e) => {
+  const handleClick = () => {
     setIsFilterVisible('hidden');
   };
   const resetFilters = () => {
@@ -38,7 +38,7 @@ export const Filter = () => {
   };
 
   return (
-    <div
+    <aside
       className={`${styles.filterWrapper} ${
         isFilterVisible === 'visible' ? styles.visibleFilter : ""
       }`}
@@ -162,6 +162,6 @@ export const Filter = () => {
           </button>
         </div>
       </div>
-    </div>
+    </aside>
   );
 };

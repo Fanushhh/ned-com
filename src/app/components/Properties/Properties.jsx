@@ -50,16 +50,18 @@ export default function Properties({ properties, isHero }) {
                   width={316}
                   height={200}
                 />
-                <h2 className={styles.propertyTitle}>{property.title}</h2>
-                <p className={styles.price}>{property.verbose_price}</p>
-                <p className={styles.description}>
-                  {property.city}, {property.region}{" "}
-                  {property.building_construction_year}{" "}
-                  {property.surface_useable
-                    ? property.surface_useable
-                    : property.surface_land}
-                  mp
-                </p>
+                <div className={styles.propertyDesc}>
+                  <h2 className={styles.propertyTitle}>{property.title}</h2>
+                  <p className={styles.price}>{property.verbose_price}</p>
+                  <p className={styles.description}>
+                    {property.city}, {property.region}{" "}
+                    {property.building_construction_year}{" "}
+                    {property.surface_useable
+                      ? property.surface_useable
+                      : property.surface_land}
+                    mp
+                  </p>
+                </div>
               </div>
             </Link>
           );
