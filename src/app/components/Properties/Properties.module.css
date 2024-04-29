@@ -48,7 +48,7 @@
     
 
     .imageLink {
-        
+        max-width: 316px;
         width: 100%;
         display: block;
     }
