@@ -10,8 +10,7 @@ export const Filter = () => {
   const [isRoomSelected, setIsRoomSelected] = useState(null);
   
   if (typeof window !== "undefined") {
-    const body = document.querySelector("body");
-    
+    const body = document.querySelector("html");
     body.style.overflowY = isFilterVisible === 'visible' ? "hidden" : "auto";
   }
   

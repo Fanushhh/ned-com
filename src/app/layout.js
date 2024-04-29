@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     <FilterProvider >
-      <body>
+      <body className="custom-body-class">
       <NavBar />
       {children}
       <Footer />

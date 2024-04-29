@@ -15,7 +15,7 @@ export const Modal = ({ images, setIsModalOpen, currentImage, setCurrentImage })
   useEffect(() => {
     const handleModalClose = (e) => {
         if (e.target === modalRef.current) {
-          document.body.style.overflow = "auto";
+          document.body.style.overflowY = "auto";
           setIsModalOpen(false);
         }
       };
@@ -27,13 +27,13 @@ export const Modal = ({ images, setIsModalOpen, currentImage, setCurrentImage })
     };
   }, []);
   if (setIsModalOpen) {
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
   }
 
   return (
     <section className={styles.modalWrapper} ref={modalRef}>
     <button className={styles.modalCloseButton} onClick={() => {
-        document.body.style.overflow = "auto";
+        document.body.style.overflowY = "auto";
         setIsModalOpen(false);
       
     }}>Inchide</button>
