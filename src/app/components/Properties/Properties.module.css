@@ -45,10 +45,10 @@
 .propertyWrapper {
     display: flex;
     align-items: center;
-    gap: 30px;
+    
 
     .imageLink {
-        max-width: 316px;
+        
         width: 100%;
         display: block;
     }
@@ -101,17 +101,14 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-    }
-
-    .propertyWrapper {
         width: 100%;
         max-width: 316px;
         .propertyDesc{
-            padding:0 1rem 1rem;
+            padding: 1rem;
         }
     }
-    .propertyCTA{
-        align-self: center;
-    }
+
+    
+    
     
 }
