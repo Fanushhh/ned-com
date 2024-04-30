@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 export default function NavBar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
-  const isProprietati = pathname === "/pages/proprietati";
+  const isProprietati = pathname !== "/";
 
   const [isScrolled, setIsScrolled] = React.useState(false);
 
