@@ -1,0 +1,17 @@
+.tableDetails{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(77, 77, 77);
+}
+.tableDetails td{
+    border-bottom: 1px solid #00000027;
+    padding:.5rem;
+}
+@media (max-width:600px){
+    .tableDetails td{
+        display:flex;
+        flex-direction: column;
+    }
+}

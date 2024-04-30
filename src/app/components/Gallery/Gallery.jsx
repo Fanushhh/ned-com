@@ -23,7 +23,7 @@ export default function Gallery({images}){
     return(
         <section className={styles.galleryWrapper}>
             <SwiperComponent
-                update
+                
                 parallax={true}
                 zoom={true}
                 modules={[Pagination, Navigation]}

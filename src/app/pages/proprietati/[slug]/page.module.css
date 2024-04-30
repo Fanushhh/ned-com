@@ -6,16 +6,29 @@
     .pageHeader, .propertyDetails{
         display:flex;
         justify-content: space-between;
+        align-items: center;
+        max-width: 938px;
     }
-    .propertyDetails div{
+    .propertyDetails {
         display:flex;
-        gap:16px;
+        gap:16px;justify-content: flex-start;
+        margin-top:1rem;
         
     }
     .price{
         color:rgba(0,150,50);
     }
     
+}
+.propertySpecifications{
+    margin-top: 50px;
+    max-width: 938px;
+    width: 100%;
+    
+    
+    gap: 1rem;
+    justify-content: space-between;
+
 }
 
 @media (max-width:950px){

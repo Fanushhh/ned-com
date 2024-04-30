@@ -1,0 +1,23 @@
+.textContainer{
+    margin-bottom:1rem;
+}
+
+.expandedText{
+    height:150px;
+    overflow:hidden;
+    
+}
+.expandedText.expanded{
+    height:auto;
+    overflow:auto;
+}
+.expandButton{
+    cursor:pointer;
+    color:rgb(46, 46, 46);
+    text-decoration: underline;
+    padding:0;
+    
+}
+.expandButton:hover{
+    color:rgb(0, 0, 0);
+}
