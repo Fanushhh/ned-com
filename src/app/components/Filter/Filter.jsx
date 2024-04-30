@@ -92,6 +92,7 @@ export const Filter = () => {
             placeholder="Zona"
           />
         </div>
+        
         <div className={styles.priceRange}>
           <div className={styles.priceContainer}>
             <label className={styles.priceLabel} htmlFor="minPrice">

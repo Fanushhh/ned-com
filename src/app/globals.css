@@ -68,6 +68,10 @@ img, picture, video, canvas, svg {
 input, button, textarea, select {
   font: inherit;
 }
+select, input{
+  border:1px solid #E5E5E5;
+  color: #6c757d !important;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

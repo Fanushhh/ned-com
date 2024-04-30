@@ -20,6 +20,12 @@
     width:450px;
     max-width: 100%;
     align-self: flex-start;
+
+    .titleContainer .filterTitle{
+        font-size:18px;
+        font-weight: 600;
+        margin-bottom: .5rem;
+    }
     
 }
 .filterContainer{
@@ -130,11 +136,12 @@
         top:0;
         right:0;
         width: 100%;
-        max-width: 400px;
+        
         height: 100vh;
         display:flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         .closeButton{
             display:block;
             color:black;
@@ -152,6 +159,9 @@
             align-items: center;
             margin-bottom:1rem;
             font-size:.8rem;
+        }
+        .titleContainer, .filterContainer{
+            width: 400px;
         }
     }
     .filterWrapper.visibleFilter{

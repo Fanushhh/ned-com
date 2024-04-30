@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useState, useRef } from "react";
 export const FilterContext = createContext(null);
 
 export const FilterProvider = ({ children }) => {
@@ -8,6 +8,7 @@ export const FilterProvider = ({ children }) => {
   const [sortBy, setSortBy] = useState("actualizate-recent");
   const [isFilterVisible, setIsFilterVisible] = useState('hidden');
   const [propertyCount, setPropertyCount] = useState(0);
+ 
   const [filter, setFilter] = useState({
     propertyType: "",
     transactionType: "",
@@ -33,6 +34,7 @@ export const FilterProvider = ({ children }) => {
         setIsFilterVisible,
         setPropertyCount,
         propertyCount,
+        
       }}
     >
       {children}

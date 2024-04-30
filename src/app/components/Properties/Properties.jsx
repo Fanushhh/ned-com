@@ -13,7 +13,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function Properties({ properties, isHero }) {
-  const { filter, isFiltered, sortBy, setPropertyCount } =
+  
+  const { filter, isFiltered,heroPropertyRef, sortBy, setPropertyCount } =
     useContext(FilterContext);
 
   const filteredProperties = filterProperties(properties, filter);
@@ -38,11 +39,11 @@ export default function Properties({ properties, isHero }) {
 
   if (isHero) {
     return (
-      <section id="properties" className={styles.propertiesWrapper}>
+      <section id="properties" className={styles.propertiesWrapper} ref={heroPropertyRef}>
         {properties.map((property) => {
           return (
-            <Link href={`pages/proprietati/${property.id}`} key={property.id}>
-              <div key={property.id} className={styles.propertyCard}>
+            <Link href={`pages/proprietati/${property.id}`} key={property.id} className={styles.propertyCard}>
+              <div key={property.id} >
                 <Image
                   style={{ objectFit: "cover" }}
                   src={property.resized_images[0]}
