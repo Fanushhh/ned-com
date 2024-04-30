@@ -19,12 +19,12 @@
    
 }
 .title{
-    font-size:44px;
+    font-size:min(2.5rem, 15vw);
     line-height: 50px;
     margin-bottom: 1rem;;
 }
 .description{
-    font-size:28px;
+    font-size:min(1.5rem, 5vw);
     line-height: 32px;
 }
 
@@ -39,4 +39,11 @@
 .heroCta:hover{
     background:white;
     color:black;
+}
+
+@media(max-width:600px){
+    .heroWrapper{
+        background-attachment: scroll;
+        padding:1rem;
+    }
 }

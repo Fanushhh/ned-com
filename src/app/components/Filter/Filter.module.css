@@ -131,7 +131,7 @@
     .filterWrapper{
         transition: transform 250ms ease-in-out;
         position:fixed;
-        transform:translateX(100%);
+        transform:translateX(140%);
         z-index: 1001;
         top:0;
         right:0;
@@ -162,6 +162,7 @@
         }
         .titleContainer, .filterContainer{
             width: 400px;
+            max-width: 100%;
         }
     }
     .filterWrapper.visibleFilter{
