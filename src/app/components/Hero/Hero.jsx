@@ -10,7 +10,7 @@ export default function Hero() {
           <Link className={styles.heroCta} href="pages/proprietati">Vezi toate proprietatile</Link>
       </div>
       <Link className={styles.navigateDown} href="#properties" id="properties">
-        <Image src="/white-arrow-down.png" alt="Arrow down" width={40} height={40} />
+        <div className={styles.arrowIcon}></div>
       </Link>
     </section>
   );

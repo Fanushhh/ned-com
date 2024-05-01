@@ -24,6 +24,7 @@ export const sortFunction = (properties, sortBy) => {
 }
 
 export const filterProperties = (properties, filter) => {
+    
     return properties.filter((property) => {
         if (
           filter.propertyType &&

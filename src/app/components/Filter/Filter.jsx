@@ -3,26 +3,36 @@
 import { FilterContext } from "@/app/providers/FilterProvider/FilterProvider";
 import { useContext, useState } from "react";
 import styles from "./Filter.module.css";
+
 let rooms = ["1", "2", "3", "4+"];
+
+
 export const Filter = () => {
-  const { filter, setFilter, setIsFiltered, isFilterVisible, setIsFilterVisible } =
-  useContext(FilterContext);
+  const {
+    filter,
+    setFilter,
+    setIsFiltered,
+    isFilterVisible,
+    setIsFilterVisible,
+  } = useContext(FilterContext);
   const [isRoomSelected, setIsRoomSelected] = useState(null);
-  
+
   if (typeof window !== "undefined") {
     const body = document.querySelector("html");
-    body.style.overflowY = isFilterVisible === 'visible' ? "hidden" : "auto";
+    body.style.overflowY = isFilterVisible === "visible" ? "hidden" : "auto";
   }
-  
 
   function handleChange(e) {
-    const { name, value } = e.target;
-    setFilter((prev) => ({ ...prev, [name]: value }));
+    if(e.target.name === 'nrOfRooms') {
+      setIsRoomSelected(e.target.value);
+    }
+    setFilter((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
     setIsFiltered(true);
-    setIsRoomSelected(e.target.value);
+    
   }
   const handleClick = () => {
-    setIsFilterVisible('hidden');
+    setIsFilterVisible("hidden");
   };
   const resetFilters = () => {
     setFilter({
@@ -36,17 +46,20 @@ export const Filter = () => {
     setIsFiltered(false);
     setIsRoomSelected(null);
   };
+  const handleSelectChange = (selectedOption, actionMeta) => {
+    setFilter((prev) => ({ ...prev, [actionMeta.name]: selectedOption.value }));
+  };
 
   return (
     <aside
       className={`${styles.filterWrapper} ${
-        isFilterVisible === 'visible' ? styles.visibleFilter : ""
+        isFilterVisible === "visible" ? styles.visibleFilter : ""
       }`}
     >
       <div className={styles.titleContainer}>
         <h2 className={styles.filterTitle}>Filtrare properietati</h2>
         <button
-          onClick={() => setIsFilterVisible('hidden')}
+          onClick={() => setIsFilterVisible("hidden")}
           className={styles.closeButton}
         >
           Inchide
@@ -92,7 +105,7 @@ export const Filter = () => {
             placeholder="Zona"
           />
         </div>
-        
+
         <div className={styles.priceRange}>
           <div className={styles.priceContainer}>
             <label className={styles.priceLabel} htmlFor="minPrice">
@@ -151,9 +164,7 @@ export const Filter = () => {
             );
           })}
         </div>
-        <div>
-          
-        </div>
+
         <div className={styles.filterButtons}>
           <button className={styles.applyFilterBtn} onClick={handleClick}>
             Aplica filtre
