@@ -6,7 +6,6 @@ import styles from "./Filter.module.css";
 
 let rooms = ["1", "2", "3", "4+"];
 
-
 export const Filter = () => {
   const {
     filter,
@@ -23,13 +22,12 @@ export const Filter = () => {
   }
 
   function handleChange(e) {
-    if(e.target.name === 'nrOfRooms') {
+    if (e.target.name === "nrOfRooms") {
       setIsRoomSelected(e.target.value);
     }
     setFilter((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
     setIsFiltered(true);
-    
   }
   const handleClick = () => {
     setIsFilterVisible("hidden");
@@ -45,9 +43,6 @@ export const Filter = () => {
     });
     setIsFiltered(false);
     setIsRoomSelected(null);
-  };
-  const handleSelectChange = (selectedOption, actionMeta) => {
-    setFilter((prev) => ({ ...prev, [actionMeta.name]: selectedOption.value }));
   };
 
   return (

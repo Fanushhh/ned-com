@@ -36,9 +36,14 @@
     flex-direction: column;
 }
 .filterSelect{
-    padding:.5rem 1rem;
-    color: #333;
-    width: 100%;
+    padding: .5rem 1rem;
+  color: #333;
+  width: 100%;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 16px;
 }
 .inputContainer,.textInput{
     width: 100%;

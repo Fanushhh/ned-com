@@ -1,3 +1,11 @@
+.tableContainer{
+    display:flex;
+    
+}
+.tableContainer div{
+    width: 50%;
+}
+
 .tableDetails{
     width: 100%;
     border-collapse: collapse;
@@ -9,9 +17,12 @@
     border-bottom: 1px solid #00000027;
     padding:.5rem;
 }
+
 @media (max-width:600px){
-    .tableDetails td{
-        display:flex;
+    .tableContainer div{
+        width: 100%;
+    }
+    .tableContainer{
         flex-direction: column;
     }
 }

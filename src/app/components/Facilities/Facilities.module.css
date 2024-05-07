@@ -1,0 +1,23 @@
+.facilitiesWrapper{
+    
+    max-width: 938px;
+    
+}
+.facilitiesWrapper h2{
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.facilitiesContainer{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    place-items: center;
+    gap:1rem;
+}
+
+@media (max-width:800px){
+    .facilitiesContainer{
+        grid-template-columns: repeat(2,1fr);
+        font-size:.8rem;
+    }
+}

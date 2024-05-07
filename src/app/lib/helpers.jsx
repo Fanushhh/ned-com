@@ -51,7 +51,7 @@ export const filterProperties = (properties, filter) => {
         if(filter.maxPrice && property.price_sale > filter.maxPrice){
             return false;
         }
-        if(filter.nrOfRooms && property.rooms < filter.nrOfRooms){
+        if(filter.nrOfRooms && property.rooms <= filter.nrOfRooms){
             return false;
         }
         return true;
@@ -169,4 +169,11 @@ export const getBuildingStructure = (structure) => {
             return "Necunoscut";
     }
 
+}
+
+export const mapFacilities = (facilities) => {
+    const facilitiesArray = Object.values(facilities).map(value => value);
+    
+    return facilitiesArray.flat().sort();
+    
 }

@@ -32,7 +32,7 @@ export default function Properties({ properties, isHero }) {
     }
   }, [filteredProperties, properties]);
   
-  if (filteredProperties.length === 0 || !properties) {
+  if (!isHero && filteredProperties.length === 0 || !properties) {
     return <p>No properties found.</p>;
   }
  
