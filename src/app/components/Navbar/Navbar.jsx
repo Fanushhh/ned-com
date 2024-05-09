@@ -72,7 +72,7 @@ export default function NavBar() {
             </Link>
           </li>
           <li>
-            <Link onClick={handleClick} href={"pages/vinde-cu-noi"}>
+            <Link onClick={handleClick} href={"/pages/vinde-cu-noi"}>
               Vinde cu noi
             </Link>
           </li>

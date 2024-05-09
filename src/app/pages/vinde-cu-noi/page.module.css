@@ -1,0 +1,53 @@
+
+.mainPage{
+    max-width: 1440px;
+    margin: 100px auto;
+    text-align: center;
+    padding:1rem;
+}
+.ctaWrapper{
+    max-width: 900px;
+    margin:0 auto;
+}
+.ctaWrapper h1{
+    margin-bottom:1.5rem;
+}
+.perk {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 50px;
+  text-align: left;
+
+}
+.perkTitle{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+
+}
+.perkDescription{
+    line-height: 1.8;
+}
+.perk:nth-child(even){
+    flex-direction: row-reverse;
+
+}
+.perkImage, .textContainer{
+    width: 50%;
+}
+
+.perkImage{
+    object-fit: cover;
+}
+
+@media (max-width:800px){
+    .perk{
+        flex-direction: column;
+    }
+    .perk:nth-child(even){
+        flex-direction: column;
+    }
+    .perkImage, .textContainer{
+        width: 100%;
+    }
+}

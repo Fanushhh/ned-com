@@ -177,3 +177,4 @@ export const mapFacilities = (facilities) => {
     return facilitiesArray.flat().sort();
     
 }
+

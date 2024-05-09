@@ -11,11 +11,6 @@ import { ContactForm } from "@/app/components/ContactForm/ContactForm";
 
 export default async function Page({ params }) {
   const property = await getProperty(params.slug);
-  
-  
- 
-  
-  
   return (
     <main className={styles.propertyPage}>
       
@@ -37,6 +32,8 @@ export default async function Page({ params }) {
                 mp{" "}
               </p>
               {property.construction_year && <p>{property.building_construction_year}</p>}
+              <p>Pret negociabil: {property.negotiable_rent_price || property.negotiable_sale_price ? 'Da' : 'Nu'}</p>
+              <p>Comision: {property.zero_comission_sale || property.zero_comission_rent ? 'Nu' : '2%'} </p>
             </div>
           </section>
           <Gallery
