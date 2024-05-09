@@ -15,7 +15,7 @@ export async function POST(req, res) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    const path = join('public', 'uploads', file.name);
+    const path = join(process.cwd(),'public', 'uploads', file.name);
     await writeFile(path, buffer);
     console.log(`open ${path} to see your uploaded file`) ;  
 
