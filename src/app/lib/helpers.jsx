@@ -178,3 +178,10 @@ export const mapFacilities = (facilities) => {
     
 }
 
+export const validateFile = (file) => {
+    const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
+    if (!allowedTypes.includes(file.type)) {
+        return false;
+    }
+    return true;
+}

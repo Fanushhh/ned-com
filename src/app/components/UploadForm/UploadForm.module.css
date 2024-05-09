@@ -1,20 +1,17 @@
-
-
-
 .formContainer{
-    max-width: 385px;
+    max-width: 600px;
     width: 100%;
-    position:sticky;
-    top:15%; /* Distance from the top of the viewport */
-    right:-50px;
+    
+    
     border:1px solid #ccc;
     padding:1rem;
-    margin:2rem 2rem;
+    margin:2rem auto;
     display:flex;
     flex-direction: column;
     gap:1rem;
     
 }
+
 .formContainer input, .formContainer textarea{
     width:100%;
     padding:0.5rem;
