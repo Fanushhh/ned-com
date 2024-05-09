@@ -1,5 +1,4 @@
 import nodemailer from "nodemailer";
-export const dynamic = "force-dynamic"; // defaults to auto
 
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
