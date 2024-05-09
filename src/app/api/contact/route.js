@@ -28,7 +28,7 @@ export async function POST(req, res) {
     });
     await transporter.sendMail({
         from: phoneNr,
-        to: process.env.NEXT_PUBLIC_EMAIL,
+        to: process.env.EMAIL,
         subject: "New message from contact form",
         text: `Phone number: ${phoneNr} \n Message: ${message}`,
         attachments: [
