@@ -67,7 +67,7 @@ export const ContactForm = ({ propertyDetails }) => {
           rows="10"
           value={`Bună ziua, aș dori sa programăm o vizionare pentru proprietatea CP${propertyDetails.id}: ${propertyDetails.title}`}
         >
-          {`Bună ziua, aș dori sa programăm o vizionare pentru proprietatea CP${propertyDetails.id}: ${propertyDetails.title}`}
+          
         </textarea>
         <input type="file" name="photoAttachments" id="photoAttachments" />
         <button>Solicita Vizionare</button>
