@@ -1,62 +1,62 @@
 import nodemailer from "nodemailer";
 
-import { writeFile, unlink } from "fs/promises";
-import { join } from "path";
+
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PASSWORD,
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD,
   },
 });
 
 export async function POST(req, res) {
-  
   const data = await req.formData();
-  const isUpload = data.get('isUpload');
-  if(isUpload === 'false') {
-    const phoneNr = data.get('phoneNr');
-    const message = data.get('propertyMessage');
+  const isUpload = data.get("isUpload");
+  if (isUpload === "false") {
+    const phoneNr = data.get("phoneNr");
+    const message = data.get("propertyMessage");
     await transporter.sendMail({
       from: phoneNr,
       to: process.env.EMAIL,
       subject: "Mesaj nou de pe Nedcom.imobiliare",
       text: `Numar de telefon: ${phoneNr} \nMesaj: ${message}`,
-  });
-  return Response.json({
+    });
+    return Response.json({
       message: `Email sent`,
       ok: true,
-  });
-  }else{
-    const file = data.get('photoAttachments');
-  const phoneNr = data.get('phoneNr');
-  const message = data.get('propertyMessage');
-  
-  const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes);
-
-  
-
-  await transporter.sendMail({
+    });
+  } else {
+    const phoneNr = data.get("phoneNr");
+    const message = data.get("propertyMessage");
+    const files = data.getAll("photoAttachments");
+    
+    const photoAttachments = [];
+    
+    for (const file of files) {
+      // Convert file to buffer
+      const buffer = await file.arrayBuffer();
+      const image = Buffer.from(buffer);
+      // Add file to attachments array
+      photoAttachments.push({
+        filename: file.name,
+        content: image,
+      });
+    }
+    
+    await transporter.sendMail({
       from: phoneNr,
       to: process.env.EMAIL,
       subject: "Mesaj nou de pe Nedcom.imobiliare",
       text: `Numar de telefon: ${phoneNr} \nMesaj: ${message}`,
-      attachments: [
-          {
-              filename: file.name,
-              content: buffer, // Attach file content directly
-              contentType: file.type, // Change to the appropriate content type based on your file type
-          },
-      ],
-  });
+      attachments: photoAttachments,
+    });
+    
   }
-  
 
   return Response.json({
-      message: `File has been uploaded and sent via email`,
-      ok: true,
+    message: `File has been uploaded and sent via email`,
+    ok: true,
   });
 }
 

@@ -7,11 +7,19 @@ export const UploadForm = () => {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
         const formData = new FormData();
-        formData.set("photoAttachments", e.target.photoAttachments.files[0]);
+        
         formData.set("isUpload", true);
         formData.set("phoneNr", e.target.phoneNr.value);
         formData.set("propertyMessage", e.target.propertyMessage.value);
+        // iterate over the photoAttachments and append them to the formData
+        for( const file of e.target.photoAttachments.files) {
+            formData.append("photoAttachments", file);
+        }
+       
+        
+       
 
         if (validateFile(e.target.photoAttachments.files[0]) === false) {
         alert(
@@ -49,6 +57,7 @@ export const UploadForm = () => {
             <input
             type="file"
             required
+            multiple
             id="photoAttachments"
             name="photoAttachments"
             accept=".jpg,.jpeg,.png"
