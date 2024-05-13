@@ -1,12 +1,12 @@
 import Gallery from "@/app/components/Gallery/Gallery";
 import styles from "./page.module.css";
-
+import dynamic from "next/dynamic";
 import { getProperty } from "@/app/lib/properties";
 import { Table } from "@/app/components/DetailsTable/Table";
 import { ExpandableText } from "@/app/components/ExpandableText/Text";
 import { mapFacilities } from "@/app/lib/helpers";
 import { Facilities } from "@/app/components/Facilities/Facilities";
-import Map from "@/app/components/Map/Map";
+const Map = dynamic(() => import("@/app/components/Map/Map"), { ssr: false });
 import { ContactForm } from "@/app/components/ContactForm/ContactForm";
 
 export default async function Page({ params }) {

@@ -1,6 +1,9 @@
-import Map from "@/app/components/Map/Map";
+
+import dynamic from "next/dynamic";
+const Map = dynamic(() => import("@/app/components/Map/Map"), { ssr: false });
 import styles from "./page.module.css";
 import { ContactPageForm } from "@/app/components/ContactPageForm/ContactPageForm";
+
 export default async function Page() {
   return (
     <main className={styles.contactPage}>
