@@ -1,7 +1,5 @@
 import Map from "@/app/components/Map/Map";
 import styles from "./page.module.css";
-import { UploadForm } from "@/app/components/UploadForm/UploadForm";
-import { ContactForm } from "@/app/components/ContactForm/ContactForm";
 import { ContactPageForm } from "@/app/components/ContactPageForm/ContactPageForm";
 export default async function Page() {
   return (
