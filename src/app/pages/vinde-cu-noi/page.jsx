@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { ContactForm } from "@/app/components/ContactForm/ContactForm";
 import { UploadForm } from "@/app/components/UploadForm/UploadForm";
 
 export default function Page() {

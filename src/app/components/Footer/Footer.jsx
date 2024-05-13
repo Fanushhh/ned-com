@@ -35,9 +35,9 @@ export default function Footer() {
         </div>
         <div className={styles.footerLinks}>
           <div className={styles.mainNav}>
-            <Link href="/contact">Contact</Link>
-            <Link href="/proprietati">Proprietati</Link>
-            <Link href="/vinde-cu-noi">Vinde cu noi</Link>
+            <Link href={"/pages/contact"}>Contact</Link>
+            <Link href={"/pages/proprietati"}>Proprietati</Link>
+            <Link href={"/pages/vinde-cu-noi"}>Vinde cu noi</Link>
           </div>
           <a href="https://anpc.ro/">ANPC</a>
           <a href="https://www.nedcom.properties/politica-de-confidentialitate/">

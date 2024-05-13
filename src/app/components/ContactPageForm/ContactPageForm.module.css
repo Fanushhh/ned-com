@@ -1,0 +1,33 @@
+.formContainer{
+    width: 900px;
+    max-width: 100%;
+    margin: 50px auto;
+    
+}
+.formContainer input, .formContainer textarea{
+    width:100%;
+    padding:0.5rem;
+    margin:0.5rem 0;
+}
+.formContainer h2{
+    margin-bottom:1rem;
+}
+.formContainer textarea{
+    height: 150px;
+    resize: none;
+    border:1px solid #ccc;
+}
+.formContainer div{
+    text-align: left;
+    margin-top:1rem;
+}
+.formContainer button{
+    color:white;
+    background-color: rgb(49, 163, 49);
+    padding:.5rem 1rem;
+    cursor:pointer;
+}
+.formContainer button:hover{
+    background-color: rgb(75, 202, 75);
+    
+}

@@ -2,7 +2,7 @@
 
 
 .formContainer{
-    max-width: 385px;
+    max-width: 40%;
     width: 100%;
     position:sticky;
     top:15%; /* Distance from the top of the viewport */
@@ -36,6 +36,10 @@
     color:white;
     background-color: rgb(49, 163, 49);
     padding:.5rem 1rem;
+    cursor:pointer;
+}
+.formContainer button:hover{
+    background-color: rgb(49, 163, 49, 0.8);
 }
 
 .agentDetails{

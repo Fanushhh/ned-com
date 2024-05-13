@@ -2,8 +2,7 @@
 import Image from "next/image";
 import styles from "./ContactForm.module.css";
 import React from "react";
-import { validateFile } from "@/app/lib/helpers";
-export const ContactForm = ({ propertyDetails }) => {
+export const ContactForm = ({ propertyDetails, isContactPage }) => {
   const [isSubmitted, setIsSubmitted] = React.useState(false);
 
   const handleSubmit = async (e) => {

@@ -28,7 +28,7 @@
 
 }
 .propertyDetailsWrapper{
-    width: 1300px;
+    width: 60%;
     max-width: 100%;
 }
 
@@ -57,10 +57,14 @@
         flex-direction: column;
         gap: 1rem;
         text-align: center;
+        
     }
 
     .propertyDetails div {
         justify-content: center;
         gap: 1rem;
+    }
+    .propertyDetailsWrapper{
+        width: 100%;
     }
 }

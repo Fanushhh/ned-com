@@ -15,7 +15,7 @@ export const Modal = ({ images, setIsModalOpen, currentImage, setCurrentImage })
   useEffect(() => {
     const handleModalClose = (e) => {
         if (e.target === modalRef.current) {
-          document.body.style.overflowY = "auto";
+          document.body.style.overflowY = "visible";
           setIsModalOpen(false);
         }
       };
@@ -33,7 +33,7 @@ export const Modal = ({ images, setIsModalOpen, currentImage, setCurrentImage })
   return (
     <section className={styles.modalWrapper} ref={modalRef}>
     <button className={styles.modalCloseButton} onClick={() => {
-        document.body.style.overflowY = "auto";
+        document.body.style.overflowY = "visible";
         setIsModalOpen(false);
       
     }}>Inchide</button>
@@ -51,6 +51,7 @@ export const Modal = ({ images, setIsModalOpen, currentImage, setCurrentImage })
           {images.map((image, index) => (
             <SwiperSlide key={index}>
               <Image
+                
                 className={styles.modalImage}
                 src={image}
                 alt={`gallery-image-${index}`}
