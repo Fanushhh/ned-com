@@ -1,16 +1,21 @@
 .heroWrapper{
     text-align: center;
     color:white;
-    background:linear-gradient(rgba(0,0,0,0.8), rgba(0, 0, 0, 0.267)), url("https://thumb.rebs-site-builder.com/0XrQJEkZIc2o5fT7OcDYEVEyAf-qrF3P1qmGMyfK234/fill/1920/1080/ce/0/aHR0cHM6Ly9zdGF0/aWMucmVicy1zaXRl/LWJ1aWxkZXIuY29t/L2ZpbGVzLzc1NC83/ZTJlZTkxY2Q5M2Q0/MDlmOGZiYzgwYzRk/YTU1Njg0My9CYXNh/cmFiLWNvdmVyLTEu/anBn.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     min-height:100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position:relative;
+}
+.heroBackgroundImage{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.5);
 }
 .navigateDown{
     position: absolute;

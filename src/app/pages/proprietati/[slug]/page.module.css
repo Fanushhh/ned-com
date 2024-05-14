@@ -13,6 +13,10 @@
         align-items: center;
         max-width: 938px;
     }
+    .pageHeader h1{
+        font-size:20px;
+        width: 75%;
+    }
 
     .propertyDetails {
         display: flex;
