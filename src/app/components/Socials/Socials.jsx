@@ -7,7 +7,7 @@ export default function Socials() {
       <div>
         <ul className={styles.socialList}>
           <li>
-            <a href="https://www.facebook.com/nedcom.imob" className={styles.socialLink}>
+            <a aria-label="facebook" href="https://www.facebook.com/nedcom.imob" className={styles.socialLink}>
               <svg
                 className={styles.icon}
                 viewBox="0 0 19 40"
@@ -24,7 +24,7 @@ export default function Socials() {
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/nedcom.imob/" className={styles.socialLink}>
+            <a aria-label="instagram" href="https://www.instagram.com/nedcom.imob/" className={styles.socialLink}>
               <svg
               className={styles.icon}
                 viewBox="0 0 40 40"
@@ -41,7 +41,7 @@ export default function Socials() {
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/company/ned-com-imobiliare/" className={styles.socialLink}>
+            <a aria-label="linkedin" href="https://www.linkedin.com/company/ned-com-imobiliare/" className={styles.socialLink}>
               <svg
               className={styles.icon}
                 viewBox="0 0 39 38"
@@ -58,7 +58,7 @@ export default function Socials() {
             </a>
           </li>
           <li>
-            <a href="https://www.youtube.com/channel/UCpwbNpd1qE0RGyxLY6j14eA" className={styles.socialLink}>
+            <a aria-label="youtube" href="https://www.youtube.com/channel/UCpwbNpd1qE0RGyxLY6j14eA" className={styles.socialLink}>
               <svg
               className={styles.icon}
                 viewBox="0 0 39 29"

@@ -8,21 +8,20 @@ export default function Footer() {
       <div className={styles.footerContainer}>
         <div>
           <div>
-            <h2>Ned Com Imobiliare</h2>
+            
+          </div>
+          <div className={styles.contactLinks}>
+          <h2>Ned Com Imobiliare</h2>
             <p>Agentie imobiliare Bucuresti</p>
-          </div>
-          <div>
             <a href="tel:+4041124400">+40 741 124 400</a>
-            <br />
+            
             <a href="mailto:nedcom.imob@gmail.com">nedcom.imob@gmail.com</a>
-            <br />
-          </div>
-          <div>
             <p>str.Dumbrava Noua 33, 051147, Bucuresti</p>
             <a href="https://maps.google.com/?q=str.%20Dumbrava%20Noua%2033,%20051147%20Bucuresti">
               Deschide cu Google Maps
             </a>
           </div>
+          
         </div>
         <div>
           <Image

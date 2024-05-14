@@ -28,11 +28,21 @@
     margin-bottom:.5rem;
 }
 .footerContainer:first-child p{
-    margin-bottom:1rem;
+    
 
 }
 
+.contactLinks{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
+}
+
+.contactLinks a{
+    text-decoration:underline;
+    color:rgb(0,200,0);
+}
 .footerLinks, .mainNav{
     display: flex;
     flex-direction: column;
