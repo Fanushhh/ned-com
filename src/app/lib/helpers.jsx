@@ -22,7 +22,9 @@ export const sortFunction = (properties, sortBy) => {
         return properties.toSorted((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
     }
 }
-
+const handleTransactionType = (type) => {
+    type === "1" ? true : false;
+}
 export const filterProperties = (properties, filter) => {
     
     return properties.filter((property) => {
@@ -32,12 +34,12 @@ export const filterProperties = (properties, filter) => {
         ) {
           return false;
         }
-        if (
-          filter.transactionType &&
-          property.currency_rent !== parseInt(filter.transactionType)
-        ) {
-          return false;
-        }
+      if(filter.transactionType === "1" && !property.for_sale){
+        return false;
+      }
+      if(filter.transactionType === "2" && !property.for_rent){
+        return false;
+      }
         if (
           (filter.zone &&
             !property.city.toLowerCase().includes(filter.zone.toLowerCase())) ||

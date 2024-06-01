@@ -9,6 +9,10 @@ import { Facilities } from "@/app/components/Facilities/Facilities";
 const Map = dynamic(() => import("@/app/components/Map/Map"), { ssr: false });
 import { ContactForm } from "@/app/components/ContactForm/ContactForm";
 
+async function generateMetadata(){
+  
+}
+
 export default async function Page({ params }) {
   const property = await getProperty(params.slug);
   return (

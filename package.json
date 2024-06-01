@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^11.2.10",
     "fs": "^0.0.1-security",
     "leaflet": "^1.9.4",
     "next": "14.1.4",
