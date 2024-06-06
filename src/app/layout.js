@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     <FilterProvider >
+    <meta name="google-site-verification" content="5Y_kxyYOJnxHHoZFxN-uDr5UyJIBFiCIf8fJGggYnKI" />
       <body className="custom-body-class">
       <NavBar/>
       {children}
