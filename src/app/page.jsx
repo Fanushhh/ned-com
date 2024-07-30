@@ -6,7 +6,6 @@ import Cta from "./components/Cta/Cta";
 import Contact from "./components/Contact/Contact";
 import Socials from "./components/Socials/Socials";
 import { getProperties } from "./lib/properties";
-import { FilterProvider } from "./providers/FilterProvider/FilterProvider";
 
 export default async function Home() {
   const properties = await getProperties(3);

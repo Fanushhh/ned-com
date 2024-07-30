@@ -13,8 +13,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion, useInView, LayoutGroup } from "framer-motion";
 export default function Properties({ properties, isHero }) {
-  const { filter, isFiltered, heroPropertyRef, sortBy, setPropertyCount } =
+
+  const { filter, isFiltered, heroPropertyRef, sortBy,setFilter, setPropertyCount } =
   useContext(FilterContext);
+  
   const filteredProperties = filterProperties(properties, filter);
 
   let newProperties = isFiltered ? filteredProperties : properties;

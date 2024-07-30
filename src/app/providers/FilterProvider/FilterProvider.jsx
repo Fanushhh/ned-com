@@ -1,5 +1,5 @@
 "use client";
-
+import { usePathname } from "next/navigation";
 import { createContext, useState, useRef } from "react";
 export const FilterContext = createContext(null);
 
@@ -8,7 +8,8 @@ export const FilterProvider = ({ children }) => {
   const [sortBy, setSortBy] = useState("actualizate-recent");
   const [isFilterVisible, setIsFilterVisible] = useState('hidden');
   const [propertyCount, setPropertyCount] = useState(0);
- 
+  const pathname = usePathname();
+  
   const [filter, setFilter] = useState({
     propertyType: "",
     transactionType: "",

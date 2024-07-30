@@ -21,18 +21,13 @@
 .description {
     font-size: 0.8rem;
 }
-.propertyCard, .propertyWrapper{
-    border:1px solid #E5E5E5;
-}
+
 .propertyCard {
     width: 300px;
     max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    
-
-
 }
 
 .propertiesList {
@@ -47,7 +42,7 @@
 .propertyWrapper {
     display: flex;
     align-items: center;
-    
+
 
     .imageLink {
         max-width: 316px;
@@ -59,11 +54,12 @@
         width: 100%;
         max-width: 316px;
     }
-    .propertyDesc{
-        padding:1rem;
+
+    .propertyDesc {
+        padding: 1rem;
     }
 
-    
+
 
     .propertyTitle {
         font-size: 18px;
@@ -77,11 +73,12 @@
 
     }
 }
+
 .propertyDesc {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding:1rem;
+    padding: 1rem;
 }
 
 @media (max-width:1100px) {
@@ -105,12 +102,13 @@
         justify-content: center;
         width: 100%;
         max-width: 316px;
-        .propertyDesc{
+
+        .propertyDesc {
             padding: 1rem;
         }
     }
 
-    
-    
-    
+
+
+
 }
