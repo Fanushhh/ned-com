@@ -15,7 +15,7 @@ export const Filter = () => {
     setIsFilterVisible,
   } = useContext(FilterContext);
   const [isRoomSelected, setIsRoomSelected] = useState(null);
-  
+  // asdnqwoinioqweqwe
   if (typeof window !== "undefined") {
     const body = document.querySelector("html");
     body.style.overflowY = isFilterVisible === "visible" ? "hidden" : "auto";
@@ -101,7 +101,7 @@ export const Filter = () => {
             placeholder="Zona"
           />
         </div>
-        /* Add the price range filter */
+        
         <div className={styles.priceRange}>
           <div className={styles.priceContainer}>
             <label className={styles.priceLabel} htmlFor="minPrice">
