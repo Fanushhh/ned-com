@@ -8,10 +8,11 @@ import { mapFacilities } from "@/app/lib/helpers";
 import { Facilities } from "@/app/components/Facilities/Facilities";
 const Map = dynamic(() => import("@/app/components/Map/Map"), { ssr: false });
 import { ContactForm } from "@/app/components/ContactForm/ContactForm";
+import { VideoComponent } from "@/app/components/VideoComponent/Video";
 
-async function generateMetadata(){
+// async function generateMetadata(){
   
-}
+// }
 
 export default async function Page({ params }) {
   const property = await getProperty(params.slug);
@@ -53,8 +54,9 @@ export default async function Page({ params }) {
           </section>
           <Facilities facilities={mapFacilities(property.tags)} />
           <Map x={property.lat} y={property.lng}/>
+          {property.video_link.length > 0 ? <VideoComponent video_link={property.video_link}/> : null}
         </div>
-      
+        
         <ContactForm propertyDetails={property}/>
         
       
